@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1 class="display-1">JOBAT MATINEE</h1>
+         <p class="text-muted">WATCH ME BEFORE YOU WATCH</p>
+        <a href="/movielist/new" class="btn btn-lg btn-outline-danger">ADD MOVIE</a>
+    </div>
+    <div class="row" style="display:flex, flex-wrap:wrap;">
+        <%movies.forEach(function(newmovie){%>
+        <div class="col-md-4 col-sm-6">
+            <div class="img-thumbnail img-fluid">
+                <img src="<%=newmovie.image%>" onerror="this.src='https://vignette.wikia.nocookie.net/bigbangtheory/images/3/32/Funny-live-long-and-prosper-sheldon-sheldon-cooper-the-big-bang-theory-Favim.com-286976.jpg/revision/latest?cb=20120711175103'" style="width:100%;height:300px;">
+                <div class="caption text-center">
+                    <h4><em><%=newmovie.moviename%></em></h4>
+                    <a href="/movielist/<%=newmovie._id%>" class="btn btn-info">VIEW</a>
+                </div>
+            </div>
+        </div>
+            <% }); %>
+    </div>
+</div>
+<% include ../partials/footer %>

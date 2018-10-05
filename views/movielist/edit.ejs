@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row ">
+        <div style="margin: 0 auto">
+            <h1 class="display-4 text-warning" style="text-align:center">UPDATE <%=movie.moviename%> POST</h1>
+                <form action="/movielist/<%= movie._id%>/?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>Movie Name</label>
+                            <input type="text" class="form-control" name="movie[moviename]" value="<%=movie.moviename%>" required/>
+                        </div>
+                         <div class="form-group">
+                         <label for="image">Upload Image</label>
+                        <input type="file" id="image" name="image" accept="image/*">
+                        <small class="form-text text-muted">*Only upload image in any one these format jpeg/jpg/png/gif.</small>
+                    </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea name="movie[description]" class="form-control" rows ="10" required><%=movie.description%></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-lg btn-block btn-outline-warning">UPDATE</button>
+                        </div>
+                    </form>
+    <a href="/movielist" class="btn btn-outline-warning">Go back</a>
+    </div>
+</div>
+</div>
+</div>
+<% include ../partials/footer %>

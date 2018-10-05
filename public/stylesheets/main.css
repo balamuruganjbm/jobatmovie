@@ -1,0 +1,14 @@
+#showimg img{
+    width: 100%;
+}
+#showimg{
+    padding: 0;
+}
+
+#showimg .caption-full{
+    padding : 9px;
+}
+
+#showcomment {
+    padding: 9px;
+}

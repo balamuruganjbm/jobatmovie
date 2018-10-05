@@ -1,0 +1,51 @@
+<% include ../partials/header %>
+<div class="container">
+  <div class="row">
+      <div class="col-md-8">
+            <div class="img-thumbnail" id="showimg">
+                    <img class="img-responsive" src="<%=movie.image%>" onerror="this.src='https://vignette.wikia.nocookie.net/bigbangtheory/images/3/32/Funny-live-long-and-prosper-sheldon-sheldon-cooper-the-big-bang-theory-Favim.com-286976.jpg/revision/latest?cb=20120711175103'"/>
+                    <div class="caption-full">
+                        <div class="text-right">
+                            <blockquote><i>created by <%=movie.author.username%></i><br/><%=movie.createdtime.toDateString()%></blockquote>
+                        </div>
+                        <h4><u><%=movie.moviename%></u></h4>
+                        <p><%=movie.description%></p>
+                    </div>
+                <% if(currentUser && movie.author.id.equals(currentUser._id)){ %>
+                <div class="btn-group" id="showcomment">
+                        <a href="/movielist/<%=movie._id%>/edit" class="btn btn-lg btn-space btn-outline-warning">Edit POST</a>
+                        <form action="/movielist/<%=movie._id%>?_method=DELETE" method="POST">
+                        <button class="btn btn-lg btn-space btn-outline-danger">DELETE POST</button>
+                    </form>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-block bg-light" id="showcomment">
+                <p class="text-center"><strong>COMMENTS</strong></p>
+                <div class="text-right">
+                    <a href="/movielist/<%=movie._id%>/comment/new" class="btn btn-success btn-sm">Add comment</a>
+                </div>    
+                <% movie.comment.forEach(function(comments){ %>
+                <div class="row">
+                    <div class="col-md-12">
+                        <strong><%=comments.author.username%></strong>
+                        <p><%=comments.text%></p>
+                    </div>
+                </div>
+                 <% if(currentUser && comments.author.id.equals(currentUser._id)){ %>
+                 <div class="btn-group">
+                    <a href="/movielist/<%=movie._id%>/comment/<%=comments._id%>/edit" class="btn btn-sm btn-primary" style="margin-right: 15px;">Edit COMMENT</a>
+                    <form action="/movielist/<%=movie._id%>/comment/<%=comments._id%>?_method=DELETE" method="POST">
+                        <button class="btn btn-sm btn-danger" style=" margin-right: 15px;">DELETE COMMENT</button>
+                    </form>
+                    </div>
+                <% } %>
+                <hr>
+            <% }); %>
+            </div>
+        </div>
+    </div>
+</div>
+<% include ../partials/footer %>
