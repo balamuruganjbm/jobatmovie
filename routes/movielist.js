@@ -35,7 +35,7 @@ router.get("/",function(req, res) {
 });
 //POST Index route
 router.post("/",middlewareObj.isLoggedin,upload.single('image'),function(req,res){
-    cloudinary.v2.uploader.upload(req.file.path, function(err,result) {
+    cloudinary.v2.uploader.upload(req.file.path,  {timeout:60000},function(err,result) {
     if(err)
        {
             req.flash('error', err.message);
