@@ -17,7 +17,7 @@ var movielistRoutes  = require("./routes/movielist"),
 
 
 //Database connect
-mongoose.connect("mongodb://imnotjbm:jbmjbmjbm45@ds123603.mlab.com:23603/jobatdb",{useNewUrlParser:true});
+mongoose.connect("mongodb://<ur mongo db name>",{useNewUrlParser:true});
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine","ejs");
 app.use(express.static("public"));
@@ -53,5 +53,5 @@ app.get("*",function(req,res){
 
 //Listen Port
 app.listen(process.env.PORT,process.env.IP,function(){
-   console.log("JOBAT Maniac app server started..!") 
+   console.log("JOBAT matniee app server started..!") 
 });
