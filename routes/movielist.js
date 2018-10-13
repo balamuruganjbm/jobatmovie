@@ -18,9 +18,9 @@ var upload = multer({ storage: storage, fileFilter: imageFilter});
 
 var cloudinary = require('cloudinary');
 cloudinary.config({ 
-  cloud_name: //ur cloud name  
-  api_key:      //ur api key
-  api_secret:  //ur api secret key
+  cloud_name: 'imnotjbm', 
+  api_key: 492889576423135, 
+  api_secret:  'vc-U-kSc22Khzp9p7GtUkYDrwEw'
 });
 
 //Index Route
