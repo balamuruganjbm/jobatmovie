@@ -24,7 +24,7 @@ cloudinary.config({
 });
 
 //Index Route
-router.get("/",function(req, res) {
+router.get("/",middlewareObj.isLoggedin,function(req, res) {
     Movies.find({},function(err,movies){
        if(err)
         res.render("/");
@@ -68,7 +68,7 @@ router.get("/new",middlewareObj.isLoggedin,function(req, res) {
 });
 
 //SHOW route
-router.get("/:id",function(req, res) {
+router.get("/:id",middlewareObj.isLoggedin,function(req, res) {
     Movies.findById(req.params.id).populate("comment").exec(function(err,movie){
      if(err)
         res.redirect("/");

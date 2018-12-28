@@ -1,24 +1,29 @@
 <% include partials/header %>
-<div class="container">
-    <div class="row ">
-        <div style="margin: 0 auto">
-            <h1 class="display-2 text-success" style="text-align:center">LOGIN</h1>
-            <form action="/login" method="POST">
-                <div class="form-group">
+<div id="particles-js">
+<div class="pos" >
+    <div class="container">
+        <div class="row">
+            <div class="" style="margin: 0 auto">
+                <h1 class="display-2 text-success" style="text-align:center">LOGIN</h1>
+                <form action="/login" method="POST">
                     <div class="form-group">
-                        <label><strong>Enter username</strong></label>
-                        <input type="text" class="form-control" name="username" placeholder="enter name" required/>
+                        <div class="form-group">
+                            <label id="text_color"><strong>Enter username</strong></label>
+                            <input type="text" class="form-control" name="username" placeholder="enter name" required/>
+                        </div>
+                        <div class="form-group">
+                            <label id="text_color"><strong>Enter password</strong></label>
+                            <input type="password" class="form-control" name="password" placeholder="enter password" required/>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-lg btn-block btn-outline-success">LOGIN</button></button>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label><strong>Enter password</strong></label>
-                        <input type="password" class="form-control" name="password" placeholder="enter password" required/>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-lg btn-block btn-outline-success">LOGIN</button></button>
-                    </div>
-                </div>
-            </form>
-            <a href="/movielist" class="btn btn-outline-warning">Go back</a>
+                </form>
+                <a href="/signup" class="btn btn-outline-warning">SIGNUP</a>
+        </div>
     </div>
+</div>
+</div>
 </div>
 <% include partials/footer%>

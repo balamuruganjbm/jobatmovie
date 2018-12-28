@@ -51,7 +51,7 @@ middlewareObj.isLoggedin = function (req,res,next){
   }  
   else
 
-    req.flash("danger","You must log in to do that");
+    req.flash("danger","Not logged in, Please log in to continue");
     res.redirect("/login");
 };
 
