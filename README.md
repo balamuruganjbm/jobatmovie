@@ -1,10 +1,11 @@
-# jobatmovie
+# Jobatmovie
 A web app to see all the best movies / tv series around the world where user can able to add their favorite movie to the site or view the already existing movie in the site.
 
 Authenticated user can able to add, edit, update and delete their respective posts and comments.
 
 It is build in **RESTful standard HTTP methods** .
 
+## SITE LINK : (https://still-spire-90784.herokuapp.com/)
 ## Front end :
 - HTML 
 - CSS 
